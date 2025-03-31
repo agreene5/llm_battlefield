@@ -1,0 +1,430 @@
+[gd_scene load_steps=23 format=3 uid="uid://cbbm5427tmoa1"]
+
+[ext_resource type="Script" uid="uid://clrpi8ea62uqy" path="res://main_menu.gd" id="1_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://bllityjisbg4l" path="res://Assets/Temp_Assets/LLM_Battlefield_Logo.png" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://cf8bevijid6eo" path="res://Assets/Temp_Assets/LLMBattlefieldBG2.png" id="2_8qtwp"]
+[ext_resource type="Script" uid="uid://0nyprxf6bg72" path="res://logo.gd" id="4_jix8l"]
+[ext_resource type="Theme" uid="uid://cutbfn43axkxw" path="res://new_theme.tres" id="5_glbon"]
+[ext_resource type="Script" uid="uid://bin5n7o85x3fo" path="res://label.gd" id="6_nlkkf"]
+[ext_resource type="AudioStream" uid="uid://dweqmywh77v2u" path="res://Assets/Souns/Overworld Battle Theme.mp3" id="7_qe12f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.150064, 0.414272, 0.26957, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.33826, 0.339262, 0.116292, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+bg_color = Color(0.0569598, 0.26898, 0.264617, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.112519, 0.423837, 0.193514, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy7ct"]
+bg_color = Color(0.619054, 0.13233, 0.325881, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0o4t1"]
+bg_color = Color(0.336053, 0.309503, 0.729571, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0k4wn"]
+bg_color = Color(0.0879158, 0.294937, 0.162595, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5v2v"]
+bg_color = Color(0.47469, 0.320409, 0.0756742, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="Gradient" id="Gradient_glbon"]
+colors = PackedColorArray(0, 0.94902, 0.905882, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nlkkf"]
+gradient = SubResource("Gradient_glbon")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qe12f"]
+lifetime_randomness = 0.29
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.061
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 12.5
+linear_accel_max = 100.0
+radial_accel_min = -2.23517e-06
+radial_accel_max = 47.5
+scale_min = 5.0
+scale_max = 25.0
+color_ramp = SubResource("GradientTexture1D_nlkkf")
+
+[sub_resource type="Animation" id="Animation_8qtwp"]
+resource_name = "Close_Controls"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls_Menu:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1160, 60), Vector2(2000, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(598, 519.37), Vector2(1459, 323)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logo:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6.28319, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Logo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.9, 0.9), Vector2(0.71, 0.71)]
+}
+
+[sub_resource type="Animation" id="Animation_nlkkf"]
+resource_name = "Open_Controls"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls_Menu:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2000, 60), Vector2(1160, 60)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1459, 323), Vector2(598, 519.37)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logo:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Logo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.71, 0.71), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="Animation" id="Animation_qe12f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls_Menu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2030, -2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1459, 323)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Logo:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Logo:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.71, 0.71)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qe12f"]
+_data = {
+&"Close_Controls": SubResource("Animation_8qtwp"),
+&"Open_Controls": SubResource("Animation_nlkkf"),
+&"RESET": SubResource("Animation_qe12f")
+}
+
+[node name="Main_Menu" type="Node2D"]
+script = ExtResource("1_fu7sn")
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(796, 544)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_8qtwp")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 1192.0
+offset_top = 620.0
+offset_right = 1592.0
+offset_bottom = 750.0
+theme = ExtResource("5_glbon")
+text = "Play"
+
+[node name="Controls" type="Button" parent="."]
+offset_left = 1353.0
+offset_top = 767.0
+offset_right = 1753.0
+offset_bottom = 897.0
+theme = ExtResource("5_glbon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qe12f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+text = "Controls"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 1476.0
+offset_top = 914.0
+offset_right = 1876.0
+offset_bottom = 1044.0
+theme = ExtResource("5_glbon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dy7ct")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0o4t1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0k4wn")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j5v2v")
+text = "Quit"
+
+[node name="Controls_Menu" type="ColorRect" parent="."]
+offset_left = 2000.0
+offset_top = 60.0
+offset_right = 2706.0
+offset_bottom = 493.0
+color = Color(0, 0, 0, 0.894118)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Controls_Menu"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 14.0
+offset_right = 837.0
+offset_bottom = 434.0
+theme = ExtResource("5_glbon")
+theme_override_font_sizes/normal_font_size = 45
+text = "WASD - Movement
+Shift - Sprint
+Space - Jump
+Click - Attack
+E - Switch Stored Item
+T - Teleport Teammate To You
+Esc - Open Pause Menu
+"
+
+[node name="High_Score" type="Label" parent="."]
+offset_left = 23.0
+offset_top = 9.0
+offset_right = 461.0
+offset_bottom = 98.0
+theme = ExtResource("5_glbon")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(2.25613e-08, 0.0594951, 0.0264899, 1)
+theme_override_constants/outline_size = 15
+text = "High Score: 0"
+script = ExtResource("6_nlkkf")
+
+[node name="Logo" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1459, 323)
+scale = Vector2(0.71, 0.71)
+texture = ExtResource("2_7vrkn")
+script = ExtResource("4_jix8l")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Logo"]
+z_index = 1
+z_as_relative = false
+position = Vector2(11.2673, -29.5774)
+scale = Vector2(5.06338, 5.06338)
+amount = 170
+amount_ratio = 0.6417
+lifetime = 0.7
+preprocess = 0.5
+speed_scale = 0.8
+explosiveness = 0.83
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_qe12f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qe12f")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_qe12f")
+autoplay = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

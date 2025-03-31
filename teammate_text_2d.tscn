@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfngd7dbvwuna"]
+
+[ext_resource type="Script" uid="uid://bdxsk50ngwscd" path="res://rich_text_label.gd" id="1_4frsc"]
+
+[node name="Teammate_Text_2d" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 1923.0
+offset_bottom = 1082.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "HERE\"S SOME TEXT!!!"
+script = ExtResource("1_4frsc")

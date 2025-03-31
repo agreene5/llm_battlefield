@@ -1,0 +1,510 @@
+[gd_scene load_steps=33 format=3 uid="uid://xrr6k162ocwd"]
+
+[ext_resource type="Script" uid="uid://bufws8isr1e3" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_kv5e3"]
+[ext_resource type="PackedScene" uid="uid://bo3m4o1bql657" path="res://longsword.tscn" id="2_skw5n"]
+[ext_resource type="Script" uid="uid://dwtj2v3q8cctx" path="res://player_attack.gd" id="3_2m4e8"]
+[ext_resource type="Script" uid="uid://blf707jfjcasm" path="res://player_position.gd" id="3_yvrqp"]
+[ext_resource type="Script" uid="uid://ch6t8qe2t1i64" path="res://player_health.gd" id="4_lm6be"]
+[ext_resource type="Script" uid="uid://cuwci3m1f5op8" path="res://health_label.gd" id="5_dk1j3"]
+[ext_resource type="Script" uid="uid://b2xtv083hncys" path="res://player_hand_item.gd" id="5_vl4ps"]
+[ext_resource type="Script" uid="uid://bck8famqqs77j" path="res://player_pickedup_item.gd" id="7_cijsi"]
+[ext_resource type="Script" uid="uid://cppsko7p01mi5" path="res://player_escape.gd" id="7_pahe0"]
+[ext_resource type="Script" uid="uid://dhy3creg0rnh3" path="res://use_stored_weapon.gd" id="7_vfelf"]
+[ext_resource type="Script" uid="uid://wi6daianpoea" path="res://scene_resetter.gd" id="8_uug51"]
+[ext_resource type="Script" uid="uid://dvd77yeeuvw0f" path="res://enemy_amount.gd" id="9_efxe6"]
+[ext_resource type="Texture2D" uid="uid://b5eya4fvhd8h0" path="res://Assets/Temp_Assets/Sword_Icon.png" id="11_vfelf"]
+[ext_resource type="Script" uid="uid://t1atwg8qt6wr" path="res://line_edit.gd" id="12_2mrfl"]
+[ext_resource type="Script" uid="uid://5bouijrr0h7u" path="res://pause_menu.gd" id="14_skw5n"]
+[ext_resource type="Theme" uid="uid://cutbfn43axkxw" path="res://new_theme.tres" id="14_vfelf"]
+[ext_resource type="AudioStream" uid="uid://mwp24mhrxxmn" path="res://Assets/Souns/Song Title_ Kakariko Village.mp3" id="17_oojgw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yn705"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5md5y"]
+material = SubResource("StandardMaterial3D_yn705")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i1di0"]
+points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ssi2w"]
+
+[sub_resource type="Animation" id="Animation_ouapu"]
+resource_name = "Attack"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.599, -0.269, -0.814)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0366519, -2.91645, 1.5708), Vector3(-0.0366519, -2.47313, 1.48353)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/WeaponPivot:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.23751, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pahe0"]
+resource_name = "Attack2"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.198854, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.599, -0.464, -0.814), Vector3(1.274, 0.74, -1.074), Vector3(1.274, 0.74, -1.074), Vector3(2.40517, -0.539, -0.347961)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133312, 0.198854, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0366519, -2.47313, 1.7017), Vector3(-0.0349066, -2.27242, 0.794125), Vector3(-0.0349066, -2.27242, 0.794125), Vector3(0.645599, -2.83453, 1.53461)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/WeaponPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.89717, 0), Vector3(0, 1.46957, 0), Vector3(0, 1.46957, 0), Vector3(0, 0.413643, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_skw5n"]
+resource_name = "Attack3"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666503, 0.0666667, 0.0999836, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2.759, -0.539, -1.154), Vector3(0.315721, -0.290435, -0.0250465), Vector3(0.316, -0.2, -0.025), Vector3(0.316, -0.2, -0.025), Vector3(4.006, -0.2, -0.729)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.0999836, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.645599, -2.83453, 1.53461), Vector3(0, -2.93913, 1.5708), Vector3(0, -2.93913, 1.5708), Vector3(1.96137e-15, -2.93913, 1.5708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/WeaponPivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.413643, 0), Vector3(0, 1.3823, 0), Vector3(0, 1.3823, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rixco"]
+resource_name = "Idle_Sword"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(-2),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0.364, -0.304, -0.664), Vector3(0.36, -0.415, -0.684)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector3(0.113446, -1.46608, 0.18326), Vector3(0.0864892, -1.39529, 0.436514)]
+}
+
+[sub_resource type="Animation" id="Animation_0f70x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head/Camera3D/WeaponPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.149, -0.569, -0.814)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Head/Camera3D/WeaponPivot/WeaponMesh:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.113446, -1.46608, 0.18326)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bka23"]
+_data = {
+&"Attack": SubResource("Animation_ouapu"),
+&"Attack2": SubResource("Animation_pahe0"),
+&"Attack3": SubResource("Animation_skw5n"),
+&"Idle_Sword": SubResource("Animation_rixco"),
+&"RESET": SubResource("Animation_0f70x")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_15v2y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oojgw"]
+bg_color = Color(0.619054, 0.13233, 0.325881, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0r4p"]
+bg_color = Color(0.336053, 0.309503, 0.729571, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2k5o"]
+bg_color = Color(0.0879158, 0.294937, 0.162595, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfelf"]
+bg_color = Color(0.47469, 0.320409, 0.0756742, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(10, 10)
+anti_aliasing = false
+
+[node name="Basic FPS Player" type="CharacterBody3D"]
+script = ExtResource("1_kv5e3")
+KEY_BIND_UP = "up"
+KEY_BIND_LEFT = "left"
+KEY_BIND_RIGHT = "right"
+KEY_BIND_DOWN = "down"
+KEY_BIND_JUMP = "jump"
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="WeaponPivot" type="Node3D" parent="Head/Camera3D"]
+
+[node name="WeaponMesh" type="MeshInstance3D" parent="Head/Camera3D/WeaponPivot"]
+transform = Transform3D(0.00822582, -0.129746, -0.0988129, 0.0181065, 0.976933, -0.0113203, 0.0980025, -0.169603, 0.0103853, 0.149, -0.569, -0.814)
+mesh = SubResource("BoxMesh_5md5y")
+
+[node name="Longsword" parent="Head/Camera3D/WeaponPivot/WeaponMesh" instance=ExtResource("2_skw5n")]
+transform = Transform3D(4.17233e-07, 9.994, 1.51992e-06, 0.998595, -4.00282e-06, -0.529538, -0.0529857, 1.72853e-06, -9.97996, 0.0371307, -0.0830077, -0.996815)
+
+[node name="Hitbox" type="Area3D" parent="Head/Camera3D/WeaponPivot/WeaponMesh"]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Head/Camera3D/WeaponPivot/WeaponMesh/Hitbox"]
+transform = Transform3D(2.145, 0, 7.45058e-09, 4.07454e-09, 2.145, -2.27243e-07, 0, 0, 2.145, 0.0224074, -0.133117, -0.610819)
+shape = SubResource("ConvexPolygonShape3D_i1di0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_ssi2w")
+
+[node name="Player_Position" type="Node" parent="."]
+script = ExtResource("3_yvrqp")
+
+[node name="Player_Attack" type="Node" parent="."]
+script = ExtResource("3_2m4e8")
+
+[node name="Player_Health" type="Node" parent="."]
+script = ExtResource("4_lm6be")
+
+[node name="Player_Hand_Item" type="Node" parent="."]
+script = ExtResource("5_vl4ps")
+
+[node name="Use_Stored_Weapon" type="Node" parent="."]
+script = ExtResource("7_vfelf")
+
+[node name="Player_Escape_And_Type_And_Teleporter" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("7_pahe0")
+
+[node name="Scene_Resetter" type="Node" parent="."]
+script = ExtResource("8_uug51")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bka23")
+}
+autoplay = "Idle_Sword"
+playback_default_blend_time = 0.1
+
+[node name="Player_Area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_Area"]
+shape = SubResource("CapsuleShape3D_15v2y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Health_Label" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 115.0
+offset_bottom = 52.0
+theme = ExtResource("14_vfelf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Health:"
+script = ExtResource("5_dk1j3")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -130.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = 130.0
+grow_horizontal = 0
+color = Color(1, 1, 1, 0.454902)
+
+[node name="Pickedup_Item" type="Sprite2D" parent="CanvasLayer/ColorRect2"]
+position = Vector2(60, 60)
+scale = Vector2(0.115, 0.115)
+texture = ExtResource("11_vfelf")
+script = ExtResource("7_cijsi")
+
+[node name="Hand_Item_Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.0
+offset_top = -41.5
+offset_right = 303.0
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_vfelf")
+theme_override_font_sizes/font_size = 100
+text = "Press Q to hand item"
+
+[node name="Enemy_Killed" type="Label" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 80.0
+offset_right = 227.0
+offset_bottom = 149.0
+theme = ExtResource("14_vfelf")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Enemies killled:"
+script = ExtResource("9_efxe6")
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+offset_left = 8.0
+offset_top = 933.0
+offset_right = 566.0
+offset_bottom = 1078.0
+theme = ExtResource("14_vfelf")
+theme_override_font_sizes/font_size = 20
+placeholder_text = "Press \"Ctrl\" to message your teammate"
+script = ExtResource("12_2mrfl")
+
+[node name="Controls" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 154.0
+offset_right = 318.0
+offset_bottom = 302.0
+theme = ExtResource("14_vfelf")
+theme_override_colors/font_color = Color(1, 0.751271, 0.344169, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 25
+text = "Shift - Sprint
+E - Use Stored Item
+T - Teleport Teammate To You
+Esc - Pause
+"
+
+[node name="Pause_Menu" type="Node2D" parent="CanvasLayer"]
+process_mode = 3
+script = ExtResource("14_skw5n")
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/Pause_Menu"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.380392)
+
+[node name="Return_Button" type="Button" parent="CanvasLayer/Pause_Menu"]
+offset_left = 311.0
+offset_top = 288.0
+offset_right = 1161.0
+offset_bottom = 548.0
+theme = ExtResource("14_vfelf")
+text = "Return"
+
+[node name="Quit_Button" type="Button" parent="CanvasLayer/Pause_Menu"]
+offset_left = 817.0
+offset_top = 640.0
+offset_right = 1667.0
+offset_bottom = 900.0
+theme = ExtResource("14_vfelf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_oojgw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l0r4p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s2k5o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfelf")
+text = "Quit"
+
+[node name="PauseSong" type="AudioStreamPlayer" parent="CanvasLayer/Pause_Menu"]
+stream = ExtResource("17_oojgw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -1.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="Player_Attack" method="_on_animation_player_animation_finished"]
+[connection signal="area_entered" from="Player_Area" to="Player_Health" method="_on_player_area_area_entered"]
+[connection signal="area_exited" from="Player_Area" to="Player_Health" method="_on_player_area_area_exited"]
+[connection signal="text_submitted" from="CanvasLayer/LineEdit" to="CanvasLayer/LineEdit" method="_on_text_submitted"]
+[connection signal="pressed" from="CanvasLayer/Pause_Menu/Return_Button" to="CanvasLayer/Pause_Menu" method="_on_return_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause_Menu/Quit_Button" to="CanvasLayer/Pause_Menu" method="_on_quit_button_pressed"]
