@@ -18,8 +18,8 @@ config/icon="uid://clyw1omqjmmov"
 
 [autoload]
 
-Global_Variables="*res://Global_Variables.gd"
-Enviromental_Info="*res://enviromental_info_getter.gd"
+Global_Variables="*res://globals/Global_Variables.gd"
+Enviromental_Info="*res://globals/enviromental_info_getter.gd"
 
 [display]
 

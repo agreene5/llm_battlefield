@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5ef6xfn6j4qa"]
-
-[ext_resource type="PackedScene" uid="uid://qy0phdv5e8s8" path="res://Assets/3D_Models/Enviroment/tree_elm.glb" id="1_mlskp"]
-
-[node name="Sketchfab_Scene" instance=ExtResource("1_mlskp")]
